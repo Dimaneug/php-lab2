@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CustomersController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,3 +17,6 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('customers',[CustomersController::class,'index'])->name("customers");
+Route::get('customers/{id}', [CustomersController::class, 'by_id'])->name('customer/{id}');
